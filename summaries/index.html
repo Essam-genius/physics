@@ -2,15 +2,54 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>الملخصات</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخصات الدروس - عبقري الفيزياء</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Cairo', sans-serif; background-color: #f8f9fa; }
+        .navbar { background-color: #007bff; padding: 15px; }
+        .navbar-brand, .nav-link { color: white !important; font-size: 18px; }
+        .container { margin-top: 20px; }
+        .summary-card { transition: transform 0.3s, box-shadow 0.3s; }
+        .summary-card:hover { transform: scale(1.05); box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); }
+    </style>
 </head>
 <body>
-    <h1>الملخصات</h1>
-    <ul>
-        <li><a href="summary1.pdf" download>ملخص درس 1</a></li>
-        <li><a href="summary2.pdf" download>ملخص درس 2</a></li>
-    </ul>
-    <a href="../index.html">عودة إلى الصفحة الرئيسية</a>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-atom"></i> عبقري الفيزياء</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center my-4">📚 ملخصات الدروس</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card summary-card p-3">
+                    <i class="fas fa-file-pdf fa-3x text-danger"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">ملخص درس 1</h5>
+                        <p class="card-text">شرح مبسط ومختصر للدرس الأول.</p>
+                        <a href="ملخص1.pdf" class="btn btn-danger" download>📥 تحميل</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card summary-card p-3">
+                    <i class="fas fa-file-pdf fa-3x text-danger"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">ملخص درس 2</h5>
+                        <p class="card-text">محتوى تفصيلي لدرس في الفيزياء.</p>
+                        <a href="ملخص2.pdf" class="btn btn-danger" download>📥 تحميل</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
