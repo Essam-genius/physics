@@ -20,7 +20,16 @@
         window.onload = countdown;
     </script>
 </head>
-<body>
+<body><script>
+  function checkAccess() {
+    var password = prompt("أدخل رمز الدخول للامتحان:");
+    if (password !== "Physics2024") {
+      alert("رمز الدخول غير صحيح!");
+      window.location.href = "../index.html"; // إعادة الطالب للصفحة الرئيسية
+    }
+  }
+  window.onload = checkAccess;
+</script>
     <h1>امتحان الفيزياء</h1>
     <p>الوقت المتبقي: <span id="timer">10:00</span></p>
     
