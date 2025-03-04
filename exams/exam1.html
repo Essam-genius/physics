@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>امتحان الفيزياء</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <script>
+        let timeLeft = 600; // 10 دقائق
+        function countdown() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            timeLeft--;
+            if (timeLeft >= 0) {
+                setTimeout(countdown, 1000);
+            } else {
+                document.getElementById("examForm").submit(); // إرسال الامتحان تلقائيًا
+            }
+        }
+        window.onload = countdown;
+    </script>
+</head>
+<body>
+    <h1>امتحان الفيزياء</h1>
+    <p>الوقت المتبقي: <span id="timer">10:00</span></p>
+    
+    <form id="examForm" action="results.html" method="POST">
+        <label>1. ما هو القانون الأول لنيوتن؟</label><br>
+        <input type="radio" name="q1" value="A"> الجسم الساكن يبقى ساكنًا ما لم تؤثر عليه قوة خارجية.<br>
+        <input type="radio" name="q1" value="B"> القوة = الكتلة × التسارع.<br>
+        <input type="radio" name="q1" value="C"> لكل فعل رد فعل مساوي له في المقدار ومعاكس له في الاتجاه.<br>
+        <br>
+        <label>2. وحدة قياس القوة هي؟</label><br>
+        <input type="radio" name="q2" value="A"> كجم.<br>
+        <input type="radio" name="q2" value="B"> متر.<br>
+        <input type="radio" name="q2" value="C"> نيوتن.<br>
+        <br>
+        <input type="submit" value="إرسال الإجابات">
+    </form>
+
+    <a href="index.html">عودة إلى الامتحانات</a>
+</body>
+</html>
