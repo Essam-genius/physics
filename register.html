@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب</title>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
+</head>
+<body>
+
+    <h2>إنشاء حساب جديد</h2>
+    <input type="email" id="email" placeholder="البريد الإلكتروني">
+    <input type="password" id="password" placeholder="كلمة المرور">
+    <button onclick="register()">إنشاء الحساب</button>
+
+    <p>لديك حساب بالفعل؟ <a href="login.html">سجل الدخول</a></p>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "API_KEY",
+            authDomain: "YOUR_PROJECT.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT.appspot.com",
+            messagingSenderId: "YOUR_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        function register() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    alert("تم إنشاء الحساب بنجاح! يمكنك الآن تسجيل الدخول.");
+                    window.location.href = "login.html";
+                })
+                .catch((error) => {
+                    alert("خطأ في إنشاء الحساب: " + error.message);
+                });
+        }
+    </script>
+
+</body>
+</html>
