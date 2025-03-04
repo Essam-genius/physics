@@ -3,126 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عبقري الفيزياء</title>
-    
-    <!-- Bootstrap 5 -->
+    <title>الدروس - عبقري الفيزياء</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- أيقونات FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <!-- تصميم مخصص -->
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Cairo', sans-serif;
-        }
-        .navbar {
-            background-color: #007bff;
-            padding: 15px;
-        }
-        .navbar-brand {
-            color: white;
-            font-weight: bold;
-            font-size: 22px;
-        }
-        .nav-link {
-            color: white !important;
-            font-size: 18px;
-        }
-        .hero-section {
-            background: linear-gradient(45deg, #007bff, #6610f2);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        .card {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        .section-title {
-            text-align: center;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        body { font-family: 'Cairo', sans-serif; background-color: #f8f9fa; }
+        .navbar { background-color: #007bff; padding: 15px; }
+        .navbar-brand, .nav-link { color: white !important; font-size: 18px; }
+        .container { margin-top: 20px; }
+        .video-card { padding: 15px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
-    <!-- شريط التنقل -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-atom"></i> عبقري الفيزياء</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="videos.html"><i class="fas fa-video"></i> فيديوهات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="summaries.html"><i class="fas fa-file-alt"></i> ملخصات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="past-exams.html"><i class="fas fa-graduation-cap"></i> امتحانات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a></li>
-                </ul>
-            </div>
+            <a class="navbar-brand" href="index.html"><i class="fas fa-atom"></i> عبقري الفيزياء</a>
         </div>
     </nav>
 
-    <!-- مقدمة الموقع -->
-    <div class="hero-section">
-        <h1>مرحبًا بك في عبقري الفيزياء</h1>
-        <p>تعلم الفيزياء بأسلوب سهل، شيق واحترافي!</p>
-    </div>
-
-    <!-- الأقسام الرئيسية -->
     <div class="container">
-        <h2 class="section-title">استكشف أقسام الموقع</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card text-center p-3">
-                    <i class="fas fa-video fa-3x text-primary"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">فيديوهات تعليمية</h5>
-                        <p class="card-text">شاهد دروس الفيزياء بأسلوب ممتع وتفاعلي.</p>
-                        <a href="videos.html" class="btn btn-primary">عرض الدروس</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-center p-3">
-                    <i class="fas fa-file-alt fa-3x text-success"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">ملخصات الدروس</h5>
-                        <p class="card-text">احصل على ملاحظات مبسطة لكل درس لمساعدتك في الفهم السريع.</p>
-                        <a href="summaries.html" class="btn btn-success">تحميل الملخصات</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-center p-3">
-                    <i class="fas fa-graduation-cap fa-3x text-danger"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">امتحانات سابقة</h5>
-                        <p class="card-text">اختبر نفسك بامتحانات السنوات الماضية.</p>
-                        <a href="past-exams.html" class="btn btn-danger">ابدأ الاختبار</a>
-                    </div>
-                </div>
-            </div>
+        <h2 class="text-center my-4">🎥 دروس الفيزياء</h2>
+
+        <div class="video-card">
+            <h5>💡 الدرس 1: قوانين نيوتن للحركة</h5>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
         </div>
+
+        <div class="video-card">
+            <h5>⚡ الدرس 2: الكهرباء والمغناطيسية</h5>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-card">
+            <h5>🌍 الدرس 3: الجاذبية</h5>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+
     </div>
 
-    <!-- مكتبة Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
