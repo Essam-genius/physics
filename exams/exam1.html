@@ -20,7 +20,7 @@
         window.onload = countdown;
     </script>
 </head>
-<body><script>
+<body><h2>الوقت المتبقي: <span id="timer">10:00</span></h2><script>
   function checkAccess() {
     var password = prompt("أدخل رمز الدخول للامتحان:");
     if (password !== "Physics2024") {
@@ -48,5 +48,20 @@
     </form>
 
     <a href="index.html">عودة إلى الامتحانات</a>
-</body>
+<script>
+  var timeLeft = 600; // 10 دقائق
+  function countdown() {
+    var minutes = Math.floor(timeLeft / 60);
+    var seconds = timeLeft % 60;
+    document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    timeLeft--;
+    if (timeLeft >= 0) {
+      setTimeout(countdown, 1000);
+    } else {
+      alert("انتهى الوقت! سيتم تسليم الامتحان تلقائيًا.");
+      document.getElementById("examForm").submit(); // تسليم الامتحان تلقائيًا
+    }
+  }
+  window.onload = countdown;
+</script></body>
 </html>
