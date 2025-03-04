@@ -2,66 +2,58 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>امتحان الفيزياء</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاختبارات - عبقري الفيزياء</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Cairo', sans-serif; background-color: #f8f9fa; }
+        .navbar { background-color: #007bff; padding: 15px; }
+        .navbar-brand, .nav-link { color: white !important; font-size: 18px; }
+        .container { margin-top: 20px; }
+        .quiz-card { padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .btn { width: 100%; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-atom"></i> عبقري الفيزياء</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center my-4">📝 اختبارات الفيزياء</h2>
+        <div class="quiz-card">
+            <h5>السؤال الأول: ما وحدة قياس القوة؟</h5>
+            <button class="btn btn-light option" onclick="checkAnswer(this, false)">كيلوغرام</button>
+            <button class="btn btn-light option" onclick="checkAnswer(this, true)">نيوتن</button>
+            <button class="btn btn-light option" onclick="checkAnswer(this, false)">جول</button>
+            <button class="btn btn-light option" onclick="checkAnswer(this, false)">واط</button>
+        </div>
+
+        <div class="quiz-card mt-3">
+            <h5>السؤال الثاني: ما هو القانون الأساسي للحركة؟</h5>
+            <button class="btn btn-light option" onclick="checkAnswer(this, true)">F = ma</button>
+            <button class="btn btn-light option" onclick="checkAnswer(this, false)">E = mc²</button>
+            <button class="btn btn-light option" onclick="checkAnswer(this, false)">V = IR</button>
+            <button class="btn btn-light option" onclick="checkAnswer(this, false)">P = IV</button>
+        </div>
+    </div>
+
     <script>
-        let timeLeft = 600; // 10 دقائق
-        function countdown() {
-            let minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
-            document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-            timeLeft--;
-            if (timeLeft >= 0) {
-                setTimeout(countdown, 1000);
+        function checkAnswer(button, correct) {
+            if (correct) {
+                button.style.backgroundColor = "green";
+                button.style.color = "white";
             } else {
-                document.getElementById("examForm").submit(); // إرسال الامتحان تلقائيًا
+                button.style.backgroundColor = "red";
+                button.style.color = "white";
             }
         }
-        window.onload = countdown;
     </script>
-</head>
-<body><h2>الوقت المتبقي: <span id="timer">10:00</span></h2><script>
-  function checkAccess() {
-    var password = prompt("أدخل رمز الدخول للامتحان:");
-    if (password !== "Physics2024") {
-      alert("رمز الدخول غير صحيح!");
-      window.location.href = "../index.html"; // إعادة الطالب للصفحة الرئيسية
-    }
-  }
-  window.onload = checkAccess;
-</script>
-    <h1>امتحان الفيزياء</h1>
-    <p>الوقت المتبقي: <span id="timer">10:00</span></p>
-    
-    <form id="examForm" action="results.html" method="POST">
-        <label>1. ما هو القانون الأول لنيوتن؟</label><br>
-        <input type="radio" name="q1" value="A"> الجسم الساكن يبقى ساكنًا ما لم تؤثر عليه قوة خارجية.<br>
-        <input type="radio" name="q1" value="B"> القوة = الكتلة × التسارع.<br>
-        <input type="radio" name="q1" value="C"> لكل فعل رد فعل مساوي له في المقدار ومعاكس له في الاتجاه.<br>
-        <br>
-        <label>2. وحدة قياس القوة هي؟</label><br>
-        <input type="radio" name="q2" value="A"> كجم.<br>
-        <input type="radio" name="q2" value="B"> متر.<br>
-        <input type="radio" name="q2" value="C"> نيوتن.<br>
-        <br>
-        <input type="submit" value="إرسال الإجابات">
-    </form>
 
-    <a href="index.html">عودة إلى الامتحانات</a>
-<script>
-  var timeLeft = 600; // 10 دقائق
-  function countdown() {
-    var minutes = Math.floor(timeLeft / 60);
-    var seconds = timeLeft % 60;
-    document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-    timeLeft--;
-    if (timeLeft >= 0) {
-      setTimeout(countdown, 1000);
-    } else {
-      alert("انتهى الوقت! سيتم تسليم الامتحان تلقائيًا.");
-      document.getElementById("examForm").submit(); // تسليم الامتحان تلقائيًا
-    }
-  }
-  window.onload = countdown;
-</script></body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
